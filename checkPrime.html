@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,4 +28,35 @@
         }
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number= prompt("Nhập số cần kiểm tra");
+        function isPrime(number){
+            if( number >= 10000 || number<=1 ){
+                return false;
+            }
+            for( let i=2; i <= Math.sqrt(number); i++){
+                if( number%i ===0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        if(isPrime(number)){
+            alert(number + " Là số nguyên tố");
+        }else{
+            alert(number + " Không phải là số nguyên tố");
+            
+        }
+    </script>
+</body>
+>>>>>>> 71f4010517d975d1a545b331597b7f8f6b8ac5f7
 </html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function CountOccurrences(arr,char){
+            let count=0;
+            for(let i=0; i<arr.length; i++){
+                if(arr[i]===char){
+                    count++;
+                }
+            }
+            return count > 0 ? count : -1;
+        }
+
+        let array= prompt("Nhập mảng bất kì cách nhau bằng ',' ").split(",").map(item => item.trim());
+        let char= prompt("Nhập bất kì...");
+        let result= CountOccurrences(array,char);
+        alert("Số lần xuất hiện của ký tự '" + char + "' là: " + (result === -1 ? -1 : result));
+    </script>
+</body>
+</html>

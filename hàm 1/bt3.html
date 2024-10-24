@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function compareAndSum(a,b){
+            if(a>b){
+                alert("Số thứ nhất lớn hơn số thứ 2");
+            }else{
+                return a+b;
+            }
+
+        }
+        let numberA= parseInt(prompt("Nhập số đầu tiên: "));
+        let numberB= parseInt(prompt("Nhập số thứ hai: "));
+        let sum= compareAndSum(numberA,numberB);
+        if(sum !== undefined){
+        alert("Tổng của 2 số là " + sum) 
+        }
+        
+    </script>
+</body>
+</html>

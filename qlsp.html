@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Add New Product</h2>
+    <input type="text" id="newProduct" placeholder="New Product">
+    <button onclick="addProduct()">Add</button>
+    </div>
+    <div>
+        <h2>Display All Product</h2>
+        <p id="productCount"></p>
+    </div>
+    <div>
+        <table id="productTable" border="1">
+            <thead>
+                <tr>
+                    <td>ID</td>
+                    <td>PRODUCT</td>
+                    <td>EDIT</td>
+                    <td>DELETE</td>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+    <script>
+        let products= ["Procduct A", "Product B", "Product C"];
+
+        function displayProduct(){
+            const TableBody= document.getElementById("productTable").getElementsByTagName("tbody")[0];
+            TableBody.innerHTML="";
+
+            products.forEach((product, index) => {
+                let row = '<tr>' +
+                          '<td>' + (index + 1) + '</td>'+
+                          '<td>' + product + '</td>' +
+                          '<td><button onclick="editProduct(' + index + ')">Edit</button></td>'+
+                          '<td><button onclick="deleteProduct(' + index + ')">Delete</button></td>' +
+                          '</tr>'
+                TableBody.innerHTML += row; 
+            });
+            document.getElementById("productCount").innerHTML= products.length + " products";
+        }       
+       
+
+        function addProduct(){
+            let newProduct= document.getElementById("newProduct").value;
+            if(newProduct){
+            products.push(newProduct);
+            alert("Added")
+            document.getElementById("newProduct").value= "";
+            displayProduct();
+            }
+        }
+
+        function editProduct(index){
+            let newName= prompt("Enter new name: ", products[index]);
+            if(newName){
+                products[index]=newName;
+                alert("Name changed");
+                displayProduct();
+            }
+        }
+        function deleteProduct(index){
+            products.splice(index,1);
+            alert("Deleted");
+            displayProduct();
+        }
+
+        displayProduct();
+    </script>
+</body>
+</html>
